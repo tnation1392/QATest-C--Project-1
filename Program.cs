@@ -22,7 +22,7 @@ class Program
         }
         else if (choice == "2")
         {
-            ITestRunner runner = CreateRunner(choice);
+            ITestRunner runner = CreateRunner();
             RunTests(suite, runner);
         }
         else if (choice == "3")
@@ -65,9 +65,17 @@ class Program
               runner.RunTests(suite);
     }
 
-    static ITestRunner CreateRunner(string? choice)
+    static ITestRunner CreateRunner()
     {
-        if (choice == "2")
+        Console.WriteLine("Select Runner Type");
+        Console.WriteLine("1. Manual Runner");
+        Console.WriteLine("2. Automated Runner");
+
+        Console.Write("Selection: ");
+
+        string? choice = Console.ReadLine();
+
+        if (choice == "1")
         {
             return new ManualTestRunner();
         }
