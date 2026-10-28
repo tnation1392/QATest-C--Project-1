@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using System.ComponentModel.Design;
+using System.Reflection.Metadata.Ecma335;
 
 namespace QATest;
 
@@ -8,26 +9,34 @@ class Program
     {
         TestSuite suite = new TestSuite("Regression Suite");
 
-        suite.AddTest(
-            new FunctionalTest("Login Test", TestPriority.High));
+        // existing test creation code
 
-        suite.AddTest(
-            new PerformanceTest("Load Test", TestPriority.Critical));
+        bool running = true;
 
-        string? choice = DisplayMenu();
+        while (running)
+        {
+            string? choice = DisplayMenu();
 
-        if (choice == "1")
-        {
-            DisplayTests(suite);
-        }
-        else if (choice == "2")
-        {
-            ITestRunner runner = CreateRunner();
-            RunTests(suite, runner);
-        }
-        else if (choice == "3")
-        {
-            DisplayResults(suite);
+            if (choice == "0")
+            {
+                running = false;
+            }
+            else if (choice == "1")
+            {
+                DisplayTests(suite);
+            }
+            else if (choice == "2")
+            {
+                ITestRunner runner = CreateRunner();
+
+                RunTests(suite, runner);
+            }
+            else if (choice == "3")
+            {
+                DisplayResults(suite);
+            }
+
+            Console.WriteLine();
         }
     }
 
