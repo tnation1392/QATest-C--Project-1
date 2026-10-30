@@ -3,10 +3,10 @@ A console-based QA Test Management application built in C# while working through
 
 The purpose of this project is to practice object-oriented programming concepts and software design principles commonly found in QA automation frameworks.
 
----
-
 Project Goals
 This project simulates a basic software testing system that allows users to:
+
+---
 
 Create test cases
 Organize tests into a suite
@@ -39,6 +39,9 @@ View tests
 Run tests
 View results
 Architecture
+
+---
+
 Test Hierarchy
                 TestCase (Abstract)
                        ▲
@@ -71,6 +74,9 @@ allowing implementations to be swapped with minimal code changes.
 Test Suite
 TestSuite
     └── List<TestCase>
+
+---
+    
 Responsibilities:
 
 Store tests
@@ -118,6 +124,8 @@ Repository
 public class Repository<T>
 The project includes a custom generic repository to demonstrate creating reusable generic types.
 
+---
+
 Example Usage
 Main Menu
 === QA Test System ===
@@ -163,6 +171,8 @@ QATest
 What I Learned
 Through this project I practiced:
 
+---
+
 Designing class hierarchies
 Choosing between classes, abstract classes, interfaces, records, and structs
 Creating reusable generic types
@@ -170,6 +180,9 @@ Applying polymorphism
 Decoupling behavior using interfaces
 Organizing a multi-file C# application
 Building a simple domain model around software testing
+
+---
+
 Future Improvements
 Potential enhancements include:
 
