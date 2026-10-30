@@ -3,7 +3,7 @@ A console-based QA Test Management application built in C# while working through
 
 The purpose of this project is to practice object-oriented programming concepts and software design principles commonly found in QA automation frameworks.
 
-Project Goals
+###Project Goals
 This project simulates a basic software testing system that allows users to:
 
 ---
