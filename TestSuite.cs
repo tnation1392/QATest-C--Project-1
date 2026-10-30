@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QATest;
+﻿using QATest;
 
 public class TestSuite
 {
@@ -31,7 +27,7 @@ public class TestSuite
 
     public List<TestResult> GetResults()
     {
-        List<TestResult> results = new List<TestResult>();
+        List<TestResult> results = new();
 
         foreach (TestCase test in Tests)
         {
@@ -42,4 +38,30 @@ public class TestSuite
         return results;
     }
 
+    public ExecutionStats GetStatistics()
+    {
+        ExecutionStats stats = new ExecutionStats();
+
+        foreach (TestCase test in Tests)
+        {
+            if (test.Status == TestStatus.Passed)
+            {
+                stats.Passed++;
+            }
+            else if (test.Status == TestStatus.Failed)
+            {
+                stats.Failed++;
+            }
+            else if (test.Status == TestStatus.Blocked)
+            {
+                stats.Blocked++;
+            }
+            else
+            {
+                stats.NotRun++;
+            }
+        }
+
+        return stats;
+    }
 }
