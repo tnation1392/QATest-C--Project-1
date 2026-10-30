@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QATest
 {
-    internal class ExecutionStats
+    public class ExecutionStats
     {
         public int Passed { get; set; }
 

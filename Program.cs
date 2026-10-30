@@ -135,11 +135,15 @@ class Program
 
             Console.WriteLine();
 
+            ExecutionStats stats = suite.GetStatistics();
+
+            Console.WriteLine();
+
             Console.WriteLine("=== Summary ===");
-            Console.WriteLine($"Passed: {passedCount}");
-            Console.WriteLine($"Failed: {failedCount}");
-            Console.WriteLine($"Blocked: {blockedCount}");
-            Console.WriteLine($"Not Run: {notRunCount}");
+            Console.WriteLine($"Passed: {stats.Passed}");
+            Console.WriteLine($"Failed: {stats.Failed}");
+            Console.WriteLine($"Blocked: {stats.Blocked}");
+            Console.WriteLine($"Not Run: {stats.NotRun}");
         }
     }
 
